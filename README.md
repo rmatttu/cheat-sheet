@@ -8,7 +8,7 @@ My cheat sheet.
 * [bash](bash.md)
 * [screen](screen.md)
 * [scp](scp.md)
-* [ssh-settings](ssh.md)
+* [ssh](ssh.md)
 * [tar](tar.md)
 * [tmux](tmux.md)
 
