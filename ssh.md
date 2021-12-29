@@ -129,6 +129,31 @@ service sshd restart
 # 接続確認
 ssh -i ~/.ssh/id_rsa {ユーザ名}@{サーバIP} -p {SSHポート}
 ```
+### .ssh/configへ追記
+
+クライアント側の`.ssh/config`に接続設定を記述する
+
+```
+Host my-server
+    User username
+    HostName 192.168.123.456
+    Port 22
+    IdentityFile ~/.ssh/id_rsa
+```
+
+今後は下記コマンドで接続できる
+
+```bash
+ssh my-server
+```
+
+scpでファイル転送する際も使用できる
+
+```bash
+# -i でssh鍵を指定しなくて良い
+scp my-server:/home/username/test.zip .
+```
+
 
 参考
 
