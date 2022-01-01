@@ -12,6 +12,10 @@ My cheat sheet.
 * [tar](tar.md)
 * [tmux](tmux.md)
 
+## OS
+
+* [ubuntu](ubuntu.md)
+
 ## Programming
 
 * [docker-usage](docker-usage.md)
