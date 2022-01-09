@@ -200,9 +200,12 @@ ssh -N myuser-test
 * -f : バックグラウンドで動作
 * -N : コマンド実行無し
 
-## `known_hosts`
+## `known_hosts`リセット
+
+ssh接続をする際に「WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!」と出てつながらない場合、 下記コマンドで登録情報をリセット
 
 ```bash
+ssh-keygen -R 123.123.123.123
 ssh-keygen -R example.com
 ssh-keygen -R '[example.com]:10022'
 ```
