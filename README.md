@@ -48,3 +48,7 @@ My cheat sheet.
 
 * [Visual Studio Code](vscode.md)
 * [vim](vim.md)
+
+## その他
+
+* [cronitor](cronitor.md)
