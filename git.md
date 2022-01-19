@@ -7,17 +7,19 @@ git config --local user.name "ユーザ名"
 git config --local user.email "メールアドレス"
 ```
 
-## 変更のリセット
+## リセット
 
-workingエリアの追跡ファイルの変更をもとに戻す
+追跡ファイルの変更をもとに戻す
 
 ```bash
 git checkout .
 ```
 
-追跡していないファイルは個別に消さなければならない
+追跡外ファイルをすべて削除
 
-* [How do I revert all local changes in Git managed project to previous state? - Stack Overflow](https://stackoverflow.com/questions/1146973/how-do-i-revert-all-local-changes-in-git-managed-project-to-previous-state)
+```bash
+git clean -fdx
+```
 
 ## リポジトリのバックアップ
 
@@ -80,6 +82,13 @@ git reset --hard HEAD^
 git reset --hard @^
 ```
 
+(for Windows)
+
+```dos
+git reset --hard "HEAD^"
+git reset --hard "@^"
+```
+
 ## ブランチ
 
 ローカルブランチ削除
@@ -135,6 +144,12 @@ origin URL確認
 
 ```bash
 git remote -v
+```
+
+## Windows環境でファイルパーミッション変更をコミット
+
+```dos
+git update-index --add --chmod=+x script.sh
 ```
 
 ## Git info
