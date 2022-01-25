@@ -408,6 +408,27 @@ do
 done < input.tsv
 ```
 
+## ps, kill
+
+list processes
+
+```bash
+ps aux
+ps auxwwf
+```
+
+kill <PID>
+
+```bash
+kill 1234
+```
+
+force
+
+```bash
+sudo kill -p 1234
+```
+
 
 ## References
 
