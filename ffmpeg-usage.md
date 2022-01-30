@@ -12,7 +12,7 @@ ffmpeg \
   -i sound_only.mp4 \ # 1番目の入力ファイルパス
   -vf framerate=60,scale=-1:720 \ # 動画の拡大縮小など、仮想フレームへの割当、設定など
   -c:v hevc_nvenc -rc:v vbr_hq -cq:v 30 -b:v 2500k -maxrate:v 5M -pix_fmt yuv420p \ # 動画エンコード設定
-  -c:a ogg -ac 2 -ar 44100 -ab 128k -acodec libvorbis \ # 音声エンコード設定
+  -c:a libvorbis -ac 2 -ar 44100 -ab 128k \ # 音声エンコード設定
   -map 0:0 \ # マッピング、出力ファイル0番目ストリーム -> 0番目の入力ファイル0番目のストリーム
   -map 0:v \ # マッピング、出力ファイル1番目ストリーム -> 0番目の入力ファイルの映像ストリーム
   -map 0:s \ # マッピング、出力ファイル2番目ストリーム -> 0番目の入力ファイルの字幕ストリーム
@@ -75,7 +75,7 @@ ffmpeg.exe -i my_input.avi  -i my_sound.m4a -vcodec hevc -b:v 10M -tile-columns 
 ffmpeg -i input.avi -itsoffset 00:00:03.000 -i input_audio.ogg -acodec copy -vcodec hevc_nvenc -b:v 8M -pix_fmt yuv420p -map 0:0 -map 1:a out.mp4
 
 # hevc + ogg(128kb
-ffmpeg -i input.mp4 -c:a ogg -ac 2 -ar 44100 -ab 128k -acodec libvorbis -vcodec hevc_nvenc -b:v 8M -pix_fmt yuv420p -map 0:0 -map 0:a out.mp4
+ffmpeg -i input.mp4 -c:a libvorbis -ac 2 -ar 44100 -ab 128k -vcodec hevc_nvenc -b:v 8M -pix_fmt yuv420p -map 0:0 -map 0:a out.mp4
 ```
 
 ※sambaフォルダを使用するとき
@@ -180,7 +180,7 @@ REM ===
     echo %~n1
     echo %out_filename%
 
-    ffmpeg -i %1 -c:a ogg -ac 2 -ar 44100 -ab 64k -acodec libvorbis -vcodec hevc_nvenc -b:v 800k -pix_fmt yuv420p -map 0:0 -map 0:a %out_filename%
+    ffmpeg -i %1 -c:a libvorbis -ac 2 -ar 44100 -ab 64k -vcodec hevc_nvenc -b:v 800k -pix_fmt yuv420p -map 0:0 -map 0:a %out_filename%
     exit /b 0
 
 :get_datetime
@@ -223,7 +223,7 @@ ffmpeg -f alsa -ac 2 -i default -c:a libvorbis -b:a 384k audio_`date "+%Y_%m_%d_
 例、-iのあとに指定する
 
 ```bash
-ffmpeg -ss 00:03:39.300 -to 00:06:43.300 -i input_video.mp4 -vf crop=1570:2160:1152:0 -c:a ogg -ac 2 -ar 44100 -ab 128k -acodec libvorbis -vcodec hevc_nvenc -b:v 8M -pix_fmt yuv420p -map 0:0 -map 0:a out1.mp4
+ffmpeg -ss 00:03:39.300 -to 00:06:43.300 -i input_video.mp4 -vf crop=1570:2160:1152:0 -c:a libvorbis -ac 2 -ar 44100 -ab 128k -vcodec hevc_nvenc -b:v 8M -pix_fmt yuv420p -map 0:0 -map 0:a out1.mp4
 ```
 
 #### 音ズレの修正
@@ -236,7 +236,7 @@ ffmpeg ^
                            -ss 00:00:06.0 -t 00:23:48.600000000 -i "input.mkv" ^
   -itsoffset -00:00:01.000 -ss 00:00:06.0 -t 00:23:48.600000000 -i "input.mkv" ^
   -s 1920x1080 -c:v hevc_nvenc -rc:v vbr_hq -cq:v 30 -b:v 5000k -maxrate:v 10M -pix_fmt yuv420p ^
-  -c:a ogg -ac 2 -ar 44100 -ab 128k -acodec libvorbis ^
+  -c:a libvorbis -ac 2 -ar 44100 -ab 128k ^
   -vf crop=w=2929:h=1646:x=0:y=302 ^
   -map 0:v -map 1:a ^
   "output.mkv"
@@ -255,8 +255,7 @@ ffmpeg ^
  -c:v hevc_nvenc ^
  -rc:v vbr_hq -cq:v 30 -b:v 2500k -maxrate:v 5000k ^
  -pix_fmt yuv420p ^
- -c:a ogg -ac 2 -ar 44100 -ab 128k ^
- -acodec libvorbis
+ -c:a libvorbis -ac 2 -ar 44100 -ab 128k
 ```
 
 ### カット
