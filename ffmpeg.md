@@ -287,6 +287,25 @@ Windowsでは、Shift-JIS、CRLFで作成したほうが良い？
 
 * [【ffmpeg】動画の解像度を指定してリサイズ、アスペクト比を維持したまま解像度を変更する、回転する - Qiita](https://qiita.com/riversun/items/d09d8e596a20ec1798f3)
 
+### 動画ファイルの整合性チェック
+
+```bash
+ffmpeg -v error -i $1 -f null -
+```
+
+スクリプト例
+
+```bash
+set +e
+ffmpeg -v error -i /path/to/video.mp4 -f null -
+return_code=$?
+set -e
+echo "RETURN_CODE $return_code"
+if [ $return_code != 0 ]; then
+  echo ERROR
+fi
+```
+
 ### TODO
 
 * `-tile-columns 4 -threads 5 -cpu-used 1 -speed 1`は指定してもあまり変わらない？
