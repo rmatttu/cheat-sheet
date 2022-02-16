@@ -22,3 +22,9 @@ vi -c ":set ff=dos" -c ":wq" src.txt
 参考
 
 * [vimで文字コードを指定してファイルを開くコマンドラインオプション | IT業務で使えるプログラミングテクニック](https://kekaku.addisteria.com/wp/20190321045617)
+
+## tac (tail -r)
+
+```vim
+:g/^/m0
+```
