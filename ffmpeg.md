@@ -290,7 +290,7 @@ Windowsでは、Shift-JIS、CRLFで作成したほうが良い？
 ### 動画ファイルの整合性チェック
 
 ```bash
-ffmpeg -v error -i $1 -f null -
+ffmpeg -v error -i video.mp4 -f null -
 ```
 
 スクリプト例
