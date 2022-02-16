@@ -1,4 +1,4 @@
-# ffmpeg usage
+# ffmpeg
 
 ## 概要
 

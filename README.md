@@ -27,7 +27,7 @@ My cheat sheet.
 
 ## Multimedia
 
-* [ffmpeg-usage](ffmpeg-usage.md)
+* [ffmpeg](ffmpeg.md)
 * [ImageMagick](image-magick.md)
 
 ## Framework
