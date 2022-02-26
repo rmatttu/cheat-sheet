@@ -28,3 +28,20 @@ vi -c ":set ff=dos" -c ":wq" src.txt
 ```vim
 :g/^/m0
 ```
+
+## 連番の作成
+
+```txt
+1.
+1.
+1.
+```
+
+この状態で、2～3行目を選択し`g<C-A>`
+
+[vim-jp » Visual モード時の CTRL-A/CTRL-X について](http://vim-jp.org/blog/2015/06/30/visual-ctrl-a-ctrl-x.html)
+
+## 便利メモ
+
+* 小カッコ内で`ci(`または`ci)`
+* アンダーバー区切りの変数等で`ct_`
