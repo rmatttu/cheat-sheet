@@ -16,3 +16,36 @@ s<search word 1><search word 2>
 : (next)
 , (prev)
 ```
+
+## Snippet
+
+```jsonc
+"Template": {
+  "prefix": "template",
+  // transform "/.*/" to ""
+  // /path/to/current-dir -> current-dir
+  // not work "${TM_DIRECTORY:/.*/::} ",
+  // not work "${TM_DIRECTORY:/.*/::g} ",
+  // not work "${TM_DIRECTORY//.*///g} ",
+  // not work "${TM_DIRECTORY:\/.*\/::g} ",
+  // not work "${TM_DIRECTORY/\/.*\///g} ",
+  // not work "${TM_DIRECTORY:\\/.*\\/::g} ",
+  "body": [
+    "# ${TM_DIRECTORY/\\/(.*)\\///}", // Parent dir name
+    "",
+    "$1",
+    "",
+    "## Usage",
+    "",
+    "## Requirements",
+    "",
+    "## Installation",
+    "",
+    "## License",
+    "",
+    "## Author",
+    "",
+    "## References"
+  ],
+}
+```
