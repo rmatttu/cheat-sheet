@@ -48,6 +48,7 @@ My cheat sheet.
 
 * [Visual Studio Code](vscode.md)
 * [vim](vim.md)
+* [zabbix](zabbix.md)
 
 ## その他
 
