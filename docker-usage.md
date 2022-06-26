@@ -136,6 +136,12 @@ docker system prune
    * [《滅びの呪文》Docker Composeで作ったコンテナ、イメージ、ボリューム、ネットワークを一括完全消去する便利コマンド - Qiita](https://qiita.com/suin/items/19d65e191b96a0079417)
    * [Docker一括削除コマンドまとめ - Qiita](https://qiita.com/boiyama/items/9972601ffc240553e1f3)
 
+rootでbash起動
+
+```bash
+docker-compose exec --user root app bash
+```
+
 ### Docker-compose設定例
 
 ```bash
