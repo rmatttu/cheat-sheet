@@ -49,3 +49,8 @@ s<search word 1><search word 2>
   ],
 }
 ```
+
+## 参考
+
+* [Snippets in Visual Studio Code](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
+* [How to get the base directory in visual studio code snippet? - Stack Overflow](https://stackoverflow.com/questions/48366014/how-to-get-the-base-directory-in-visual-studio-code-snippet)
