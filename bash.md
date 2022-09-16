@@ -1,5 +1,21 @@
 # bash
 
+## Find
+
+```bash
+find /path/to/find -type f
+find /path/to/directory -type d
+
+# time filter
+find -newermt "2022-09-15 17:21:44" -type f
+
+# file size filter
+find -type f -size +0c
+
+# Remove "./"
+find -type f -printf '%P\n'
+```
+
 ## Shebang
 
 ```bash
