@@ -1,5 +1,13 @@
 # bash
 
+## exec
+
+今後実行されるコマンドの標準出力・標準エラー出力をファイルにも書き出す
+
+```bash
+exec &> >(tee --append $log_name)
+```
+
 ## Find
 
 ```bash
