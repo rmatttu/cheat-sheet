@@ -123,7 +123,7 @@ iconv -f cp932 -t utf8 txt2wav.c >txt2wav.utf8.c
 Like "git diff"
 
 ```bash
-diff -U1 a.txt b.txt
+diff -U0 a.txt b.txt
 ```
 
 ## sed
@@ -236,7 +236,9 @@ if [ ! -z "$var" ] ; then
 fi
 ```
 
-set -u
+## Check unset variable
+
+`set -u`セット時でも変数を確認
 
 ```bash
 set -u
