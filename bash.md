@@ -11,9 +11,20 @@ find -newermt "2022-09-15 17:21:44" -type f
 
 # file size filter
 find -type f -size +0c
+```
 
-# Remove "./"
+Remove "./"
+
+```bash
+find -type f
+# ./a.txt
+# ./b.txt
+# ./c.txt
+
 find -type f -printf '%P\n'
+# a.txt
+# b.txt
+# c.txt
 ```
 
 ## Shebang
